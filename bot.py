@@ -1,6 +1,4 @@
 import asyncio
-from typing import TYPE_CHECKING
-
 import aiojobs
 import orjson
 import tenacity
@@ -10,13 +8,14 @@ from aiogram.client.telegram import TelegramAPIServer
 from aiogram.fsm.storage.redis import DefaultKeyBuilder, RedisStorage
 from aiohttp import web
 from redis.asyncio import Redis
+from typing import TYPE_CHECKING
 
-from aiogram_bot_template import handlers, utils, web_handlers
-from aiogram_bot_template.data import config
-from aiogram_bot_template.middlewares import StructLoggingMiddleware
+import handlers, utils, web_handlers
+from data import config
+from middlewares import StructLoggingMiddleware
 
 if TYPE_CHECKING:
-    import asyncpg as asyncpg
+    import asyncpg
     import redis
     import structlog
     from aiogram.client.session.aiohttp import AiohttpSession

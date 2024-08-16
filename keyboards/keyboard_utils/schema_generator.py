@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from typing import TypeVar
 
-from aiogram_bot_template import exceptions
+import exceptions
 
 T = TypeVar("T")
 
